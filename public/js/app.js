@@ -1,6 +1,4 @@
-//import { response } from "express"
 
-console.log("hello")
 
 fetch('http://puzzle.mead.io/puzzle').then((response)=>{
     response.json().then((data)=>{
