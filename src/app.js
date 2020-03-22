@@ -8,7 +8,7 @@ const app=express()
 const publicDirectoryPath=path.join(__dirname,'../public')
 const viewPath=path.join(__dirname,'../templates/views')
 const partialPath=path.join(__dirname,'../templates/partials')
-
+const port=process.env.PORT || 3000;
 
 //setup static directory to serve
 app.use(express.static(publicDirectoryPath))
@@ -79,6 +79,6 @@ app.get('*',(req,res)=>{
     res.render('404',{errorPage:'Error 400',title:'Weather App',name:"Prashant"})
 })
 
-app.listen(3000,()=>{
-    console.log('server stared')
+app.listen(port,()=>{
+    console.log('server stared at port '+port)
 })
